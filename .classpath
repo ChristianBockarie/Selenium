@@ -10,5 +10,7 @@
 	<classpathentry kind="lib" path="C:/Users/avanc/Selenium/selenium-java-3.141.59/libs/okhttp-3.11.0.jar"/>
 	<classpathentry kind="lib" path="C:/Users/avanc/Selenium/selenium-java-3.141.59/libs/okio-1.14.0.jar"/>
 	<classpathentry kind="lib" path="C:/Users/avanc/Selenium/selenium-server-standalone-3.141.59.jar"/>
+	<classpathentry kind="lib" path="src/drivers/ios-server-0.6.5-jar-with-dependencies.jar"/>
+	<classpathentry kind="lib" path="C:/Users/avanc/Selenium/operadriver_win64.zip"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

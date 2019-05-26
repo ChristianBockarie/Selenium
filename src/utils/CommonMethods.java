@@ -6,21 +6,25 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.openqa.selenium.support.ui.Select;
 
 public class CommonMethods {
 	
 	public static WebDriver driver;
-
-	public static void setUpDriver(String browser, String url) {
+	public static String url = "http://www.google.com/";
+	public static void setUpDriver(String browser, String url) {//creating a parameterized method with the browser and URL
 		if (browser.equalsIgnoreCase("chrome")) {
-			System.setProperty("webdriver.chrome.driver", "\\Users\\avanc\\Selenium\\chromedriver.exe");
+			System.setProperty("webdriver.chrome.driver", "src/drivers/chromedriver.exe");
 			driver = new ChromeDriver();
 		} else if (browser.equalsIgnoreCase("firefox")) {
-			System.setProperty("webdriver.gecko.driver", "\\Users\\avanc\\Selenium\\geckodriver.exe");
+			System.setProperty("webdriver.gecko.driver", "src/drivers/geckodriver.exe");
 			driver = new FirefoxDriver();
-		} else {
-			System.out.println("Broser given is not in system liberary");
+		}else if(browser.equalsIgnoreCase("internetexplorer")) {
+			System.setProperty("webdriver.ie.driver", "src/drivers/IEDriverServer.exe");
+			driver = new InternetExplorerDriver();
+		}else {
+			System.out.println("Browser given is not in system liberary");
 		}
 		driver.get(url);
 		driver.manage().window().maximize();
@@ -55,3 +59,7 @@ public class CommonMethods {
 		element.sendKeys(value);
 	}
 }
+/**
+ * 
+ * 
+ */
