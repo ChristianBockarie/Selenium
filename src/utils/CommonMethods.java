@@ -1,6 +1,7 @@
 package utils;
 
 import java.util.List;
+import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -26,6 +27,8 @@ public class CommonMethods {
 		}else {
 			System.out.println("Browser given is not in system liberary");
 		}
+		driver.manage().timeouts().pageLoadTimeout(30, TimeUnit.SECONDS);
+		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 		driver.get(url);
 		driver.manage().window().maximize();
 	}
