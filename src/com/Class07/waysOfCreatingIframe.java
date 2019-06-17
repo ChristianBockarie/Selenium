@@ -4,6 +4,7 @@ import org.openqa.selenium.By;
 
 import utils.CommonMethods;
 
+
 public class waysOfCreatingIframe extends CommonMethods {
 	public static void main(String[] args) throws InterruptedException {
 		// TODO Auto-generated method stub

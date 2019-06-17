@@ -1,0 +1,38 @@
+package com.Class10;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+import utils.CommonMethods;
+
+public class WaysOfUsingExplicitWait extends CommonMethods{
+
+	public static void main(String[] args) throws InterruptedException {
+		
+		String url="https://the-internet.herokuapp.com/";
+		setUpDriver("chrome", url);
+		
+		String text="Dynamic Controls";
+		driver.findElement(By.linkText(text)).click();
+		
+		String buttonXpath="//button[text()='Enable']";
+		driver.findElement(By.xpath(buttonXpath)).click();
+		
+		//1 way
+		  WebDriverWait wait=new WebDriverWait(driver, 30); 
+		  wait.until(ExpectedConditions.elementToBeClickable(By.xpath( "//input[@type='text']"))); 
+		  String textToEnter="Sunday"; //
+		  driver.findElement(By.xpath("//input[@type='text']")).sendKeys(textToEnter);
+		  String returnedText=driver.findElement(By.xpath("//input[@type='text']")).
+		  getAttribute("value"); // //compare entered and returned text // 
+		  if (returnedText.equals(textToEnter)) { //
+		  System.out.println("Text is entered"); // }else { //
+		  System.out.println("Text "+textToEnter+" is NOT entered"); // }
+		 
+		
+		Thread.sleep(5000);
+		driver.quit();
+	}
+}
+}

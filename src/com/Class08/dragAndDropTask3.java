@@ -1,10 +1,11 @@
 package com.Class08;
 
-import org.openqa.selenium.By;
+import org.openqa.selenium.By;	
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 
 import utils.CommonMethods;
+
 
 public class dragAndDropTask3 extends CommonMethods{
 	/*

@@ -10,20 +10,21 @@ import org.openqa.selenium.By;
 	public class RadioDemo {
 
 		public static void main(String[] args) throws InterruptedException {
-			System.setProperty("webdriver.chrome.driver", "\\Users\\avanc\\Selenium\\chromedriver.exe");
+			System.setProperty("webdriver.chrome.driver", "src/drivers/chromedriver.exe");
 			WebDriver driver=new ChromeDriver();
 			
 			driver.manage().window().maximize();
 			driver.get("https://www.toolsqa.com/automation-practice-form/");
-			
-			WebElement maleRadio=driver.findElement(By.xpath("//input[starts-with(@value,'M')]"));
-			
-			System.out.println(maleRadio.isDisplayed());//true
-			System.out.println(maleRadio.isEnabled());//true
-			System.out.println(maleRadio.isSelected());//false
-			// 1 way of clicking on the element
-			maleRadio.click();
-			System.out.println(maleRadio.isSelected());//true
+		/*
+		 * WebElement
+		 * maleRadio=driver.findElement(By.xpath("//input[starts-with(@value,'M')]"));
+		 * 
+		 * System.out.println(maleRadio.isDisplayed());//true
+		 * System.out.println(maleRadio.isEnabled());//true
+		 * System.out.println(maleRadio.isSelected());//false
+		 */			// 1 way of clicking on the element
+			//maleRadio.click();
+			//System.out.println(maleRadio.isSelected());//true
 			
 			// 2 way - preffered way
 			String valueToSelect = "Automation Tester";
@@ -45,7 +46,7 @@ import org.openqa.selenium.By;
 			}
 			
 			Thread.sleep(2000);
-			driver.quit();
+			//driver.quit();
 			
 		}
 }

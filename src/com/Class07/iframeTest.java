@@ -4,12 +4,13 @@ import org.openqa.selenium.By;
 
 import utils.CommonMethods;
 
+
 public class iframeTest extends CommonMethods {
 
 
 	public static void main(String[] args) throws InterruptedException {
 		// TODO Auto-generated method stub
-		CommonMethods.setUpDriver("chrome", "http://uitestpractice.com/Students/Switchto");
+		CommandTest.setUpDriver("chrome", "http://uitestpractice.com/Students/Switchto");
 		
 		driver.switchTo().frame(driver.findElement(By.cssSelector("iframe[name='iframe_a']")));
 		
